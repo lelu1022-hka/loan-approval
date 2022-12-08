@@ -15,6 +15,12 @@
       "disabled": true
     },
     {
+      "label": "Amount",
+      "type": "number",
+      "id": "Field_0p86nsn",
+      "key": "amount"
+    },
+    {
       "label": "Credit Rating",
       "type": "textfield",
       "id": "Field_1l1wost",

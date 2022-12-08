@@ -17,6 +17,15 @@
       "validate": {
         "required": true
       }
+    },
+    {
+      "label": "Amount",
+      "type": "number",
+      "id": "Field_0q8abvf",
+      "key": "amount",
+      "validate": {
+        "required": true
+      }
     }
   ],
   "type": "default",
