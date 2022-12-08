@@ -1,0 +1,33 @@
+{
+  "components": [
+    {
+      "label": "Prename",
+      "type": "textfield",
+      "id": "Field_0mvwxnz",
+      "key": "prename",
+      "disabled": true
+    },
+    {
+      "label": "Surname",
+      "type": "textfield",
+      "id": "Field_0mg0onf",
+      "key": "field_0n7zslg"
+    },
+    {
+      "label": "Credit Rating",
+      "type": "textfield",
+      "id": "Field_1l1wost",
+      "key": "creditrating",
+      "disabled": true
+    }
+  ],
+  "type": "default",
+  "id": "approve-loan",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.5.1"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.18.0",
+  "schemaVersion": 5
+}
