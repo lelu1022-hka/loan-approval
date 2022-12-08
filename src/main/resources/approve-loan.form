@@ -11,7 +11,8 @@
       "label": "Surname",
       "type": "textfield",
       "id": "Field_0mg0onf",
-      "key": "field_0n7zslg"
+      "key": "surname",
+      "disabled": true
     },
     {
       "label": "Credit Rating",
@@ -19,6 +20,26 @@
       "id": "Field_1l1wost",
       "key": "creditrating",
       "disabled": true
+    },
+    {
+      "label": "Income",
+      "type": "number",
+      "id": "Field_01ijf92",
+      "key": "income",
+      "disabled": true
+    },
+    {
+      "label": "Bank Loans",
+      "type": "number",
+      "id": "Field_0x3q2mz",
+      "key": "bankLoans",
+      "disabled": true
+    },
+    {
+      "label": "Approved",
+      "type": "checkbox",
+      "id": "Field_1nwvxt4",
+      "key": "approvedManual"
     }
   ],
   "type": "default",

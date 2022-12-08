@@ -13,17 +13,14 @@ import org.json.JSONObject;
 public class App{
     
     private static HttpURLConnection conn;
-   
-    private static String parse(String responseBody) {
-      //ToDo Kunden mit selben Namen
-      JSONArray customers = new JSONArray(responseBody);
-      JSONObject album = customers.getJSONObject(0); 
-      String creditrating = album.getString("creditRating");
-      return creditrating;
-  }
     
-    
-    public static String getCustomerRatingByName(String prename, String surname) {
+    /**
+     * HTTP Get Request auf localhost:3000/customers
+     * @param prename Vorname eines Kunden
+     * @param surname Nachname eines Kunden
+     * @return
+     */
+    public static String getCustomerByName(String prename, String surname) {
         
         BufferedReader reader;
         String line;
@@ -58,7 +55,7 @@ public class App{
                 reader.close();
             }
             //System.out.println(responseContent.toString());
-            rating = parse(responseContent.toString());
+            rating = (responseContent.toString());
         }
         catch (MalformedURLException e) {
             e.printStackTrace();
