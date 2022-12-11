@@ -3,8 +3,8 @@ package org.camunda.bpm.getstarted.loanapproval;
 import java.util.logging.Logger;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
-import org.camunda.bpm.getstarted.httpclient.App;
-import org.camunda.bpm.getstarted.util.Util;
+import org.camunda.bpm.getstarted.entity.Customer;
+import org.camunda.bpm.getstarted.httpclient.ReadService;
 
 public class ProcessRequestDelegate implements JavaDelegate {
   
@@ -18,21 +18,22 @@ public class ProcessRequestDelegate implements JavaDelegate {
     String prename = (String)execution.getVariable("prename");
     String surname = (String)execution.getVariable("surname");
     
-    //ToDo Kunde nicht vorhanden
-    String customer = App.getCustomerByName(prename, surname);
+    // TODO Kunde nicht vorhanden, Mehrere Kunden
+    Customer customer = ReadService.getCustomerByName(prename, surname);
     
-    //Utilklasse Aufruf für Parameter des Kunden
-    String rating = Util.getRating(customer);
-    Integer income = Util.getIncome(customer);
-    Integer bankLoans = Util.getbankLoans(customer);
+    //Setzen der Parameter im Kunden für camunda, Zinsberechnung
+    if (customer != null) {
+    execution.setVariable("creditrating", customer.getCreditRating());
+    execution.setVariable("income", customer.getIncome());
+    execution.setVariable("bankLoans", customer.getBankLoans());
     
-    //Setzen der Parameter im Kunden für camunda
-    execution.setVariable("creditrating", rating);
-    execution.setVariable("income", income);
-    execution.setVariable("bankLoans", bankLoans);
-    
-    LOGGER.info("Processing request by '" + execution.getVariable("prename") + " " + execution.getVariable("surname") + " Rating: " + execution.getVariable("creditrating") + 
+    LOGGER.info("Processing request by '" + execution.getVariable("prename") + " " + execution.getVariable("surname") + 
+        " Rating: " + execution.getVariable("creditrating") + 
         "Income: " + execution.getVariable("income") + "Bank Loans: " + execution.getVariable("bankLoans"));
+    }
+    else {
+      LOGGER.info("Customer not found");
+    }
   }
 }
 
