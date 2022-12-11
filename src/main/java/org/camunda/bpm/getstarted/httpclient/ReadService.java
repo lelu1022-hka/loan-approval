@@ -12,11 +12,11 @@ import org.camunda.bpm.getstarted.util.Util;
 
 public class ReadService {
   
-  public static final String base = "http://localhost:3000/customers";
+  private static final String base = "http://localhost:3000/customers";
   private static HttpURLConnection conn;
   
   /**
-   * fidnen eines Kunden anhand von Vornamen und Nachnamen
+   * finden eines Kunden anhand von Vornamen und Nachnamen
    * @param prename Vorname des Kunden
    * @param surname Nachname des Kunden
    * @return Customer Objekt wenn gefunden sonst Null
