@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_1k43uax" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.5.1" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.18.0">
+  <decision id="interestrate" name="Interest Rate">
+    <decisionTable id="DecisionTable_1lbajme">
+      <input id="Input_1" label="Credit Rating" biodi:width="261" camunda:inputVariable="creditrating">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0awoyz1" label="Amount" biodi:width="167" camunda:inputVariable="amount">
+        <inputExpression id="LiteralExpression_0ydfaaa" typeRef="integer">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Interest" name="interest" typeRef="double" biodi:width="276" />
+      <rule id="DecisionRule_1s2u0n3">
+        <inputEntry id="UnaryTests_12zeaz1">
+          <text>"A"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0i2uvn7">
+          <text>&lt; 10000</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_077rbe5">
+          <text>0.04</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0y0mxsu">
+        <inputEntry id="UnaryTests_06xq2ck">
+          <text>"A"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02osked">
+          <text>&gt;=10000</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_165v2cu">
+          <text>0.05</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0s9ci2d">
+        <inputEntry id="UnaryTests_0eu10gc">
+          <text>"B"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0x7u0i8">
+          <text>&lt;8000</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1t8bd26">
+          <text>0.04</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0mtqccg">
+        <inputEntry id="UnaryTests_1yxlw0d">
+          <text>"B"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00okum0">
+          <text>[8000..15000]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_11ntgia">
+          <text>0.05</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_00ygh12">
+        <inputEntry id="UnaryTests_0ds2tto">
+          <text>"B"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0kv8hz4">
+          <text>&gt;15000</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1xi3k84">
+          <text>0.06</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_17698c2">
+        <inputEntry id="UnaryTests_0m55qei">
+          <text>"C"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ywwdrb">
+          <text>&lt;5000</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0z72led">
+          <text>0.04</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_10s8e2h">
+        <inputEntry id="UnaryTests_1y9y8di">
+          <text>"C"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1e2nb4m">
+          <text>&gt;=5000</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1xk6abq">
+          <text>0.06</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="interestrate">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
