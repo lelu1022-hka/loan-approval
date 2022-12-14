@@ -43,6 +43,4 @@ public class Util {
     Integer bankLoans = album.getInt("bankLoans");
     return bankLoans;
   }
-  
-  
 }

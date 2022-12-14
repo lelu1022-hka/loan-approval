@@ -10,6 +10,7 @@
     <resource>loan-approval.bpmn</resource>
     <resource>request-loan.form</resource>
     <resource>approve-loan.form</resource>
+    <resource>new-customer.form</resource>
     
     <properties>
       <property name="isDeleteUponUndeploy">false</property>

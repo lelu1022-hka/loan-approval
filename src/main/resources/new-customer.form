@@ -1,0 +1,60 @@
+{
+  "components": [
+    {
+      "label": "Prename",
+      "type": "textfield",
+      "id": "Field_01o9zck",
+      "key": "prename",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Surname",
+      "type": "textfield",
+      "id": "Field_1vcsu65",
+      "key": "surname",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Credit Rating",
+      "type": "textfield",
+      "id": "Field_0g0ppfz",
+      "key": "creditrating",
+      "defaultValue": "A",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Income",
+      "type": "number",
+      "id": "Field_1uqitbq",
+      "key": "income",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Bank Loans",
+      "type": "number",
+      "id": "Field_1g6x4zv",
+      "key": "bankLoans",
+      "defaultValue": 0,
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "type": "default",
+  "id": "new-customer",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.5.1"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.18.0",
+  "schemaVersion": 5
+}

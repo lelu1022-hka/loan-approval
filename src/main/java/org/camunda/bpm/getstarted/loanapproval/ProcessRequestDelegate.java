@@ -26,12 +26,15 @@ public class ProcessRequestDelegate implements JavaDelegate {
     execution.setVariable("creditrating", customer.getCreditRating());
     execution.setVariable("income", customer.getIncome());
     execution.setVariable("bankLoans", customer.getBankLoans());
+    execution.setVariable("foundCustomer", true);
     
     LOGGER.info("Processing request by '" + execution.getVariable("prename") + " " + execution.getVariable("surname") + 
         " Rating: " + execution.getVariable("creditrating") + 
         "Income: " + execution.getVariable("income") + "Bank Loans: " + execution.getVariable("bankLoans"));
     }
     else {
+      //boolean found = false;
+      execution.setVariable("foundCustomer", false);
       LOGGER.info("Customer not found");
     }
   }

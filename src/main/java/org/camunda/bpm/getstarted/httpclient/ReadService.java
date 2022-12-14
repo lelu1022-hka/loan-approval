@@ -54,12 +54,16 @@ public class ReadService {
         }
         reader.close();
       }
-      String customer = (responseContent.toString());
-      String rating = Util.getRating(customer);
-      Integer income = Util.getIncome(customer);
-      Integer bankLoans = Util.getbankLoans(customer);
       
-      return new Customer(prename, surname, rating, income, bankLoans);
+      if(responseContent.length() != 2) {
+        String customer = (responseContent.toString());
+        String rating = Util.getRating(customer);
+        Integer income = Util.getIncome(customer);
+        Integer bankLoans = Util.getbankLoans(customer);
+        
+        return new Customer(prename, surname, rating, income, bankLoans);
+      }
+      
     }
     catch (MalformedURLException e) {
       e.printStackTrace();
