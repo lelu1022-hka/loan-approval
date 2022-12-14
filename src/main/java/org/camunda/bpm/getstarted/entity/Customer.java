@@ -1,5 +1,7 @@
 package org.camunda.bpm.getstarted.entity;
 
+import org.json.JSONObject;
+
 public class Customer {
 
   private String prename;
@@ -61,6 +63,14 @@ public class Customer {
     return (this.prename + " " + this.surname);
   }
   
-  
+  public JSONObject toJSONObject() {
+    JSONObject customer = new JSONObject();
+    customer.put("prename", this.prename);
+    customer.put("surname", this.surname);
+    customer.put("creditRating", this.creditRating);
+    customer.put("income", this.income);
+    customer.put("bankLoans", this.bankLoans);
+    return customer;
+  }
   
 }
