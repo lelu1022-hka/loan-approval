@@ -16,7 +16,7 @@ public class ReadService {
   private static HttpURLConnection conn;
   
   /**
-   * finden eines Kunden anhand von Vornamen und Nachnamen
+   * finden eines Kunden in einer JSON-Datenbank anhand von Vornamen und Nachnamen
    * @param prename Vorname des Kunden
    * @param surname Nachname des Kunden
    * @return Customer Objekt wenn gefunden sonst Null

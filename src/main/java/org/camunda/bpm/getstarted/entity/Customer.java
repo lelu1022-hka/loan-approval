@@ -2,6 +2,9 @@ package org.camunda.bpm.getstarted.entity;
 
 import org.json.JSONObject;
 
+/**
+ * Entity Klasse für den Kunden
+ */
 public class Customer {
 
   private String prename;
@@ -63,6 +66,10 @@ public class Customer {
     return (this.prename + " " + this.surname);
   }
   
+  /**
+   * Erstellen eines JSONObjekts
+   * @return JSON Repräsentation eines Kundenobjekts
+   */
   public JSONObject toJSONObject() {
     JSONObject customer = new JSONObject();
     customer.put("prename", this.prename);

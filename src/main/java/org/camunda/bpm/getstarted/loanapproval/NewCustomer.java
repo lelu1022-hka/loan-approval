@@ -7,6 +7,10 @@ import org.camunda.bpm.engine.delegate.JavaDelegate;
 import org.camunda.bpm.getstarted.entity.Customer;
 import org.camunda.bpm.getstarted.httpclient.WriteService;
 
+/**
+ * JavaDelegate um einen neuen Kunden anzulegen
+ *
+ */
 public class NewCustomer implements JavaDelegate {
   
   private final static Logger LOGGER = Logger.getLogger("NewCustomer");

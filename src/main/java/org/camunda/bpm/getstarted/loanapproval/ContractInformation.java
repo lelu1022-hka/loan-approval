@@ -5,6 +5,10 @@ import java.util.logging.Logger;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 
+/**
+ * Der Kunde wird darüber Informiert ob der Kreditvertrag angenommen oder abgelehnt wurde
+ * Mocking über einen Logger
+ */
 public class ContractInformation implements JavaDelegate{
 
   private final static Logger LOGGER = Logger.getLogger("Contract");

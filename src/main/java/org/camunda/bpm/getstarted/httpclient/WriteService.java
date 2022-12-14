@@ -14,6 +14,10 @@ public class WriteService {
   private static final String base = "http://localhost:3000/customers";
   private static HttpURLConnection conn;
   
+  /**
+   * Ein neuer Kunde wird der JSON-Datenbank hinzugefügt
+   * @param customer Ein Kundenobjekt
+   */
   public static void addNewCustomer(Customer customer) {
    
     try {
