@@ -7,6 +7,7 @@ import org.json.JSONObject;
  */
 public class Customer {
 
+  private Integer id;
   private String prename;
   private String surname;
   private String creditRating;
@@ -77,7 +78,20 @@ public class Customer {
     customer.put("creditRating", this.creditRating);
     customer.put("income", this.income);
     customer.put("bankLoans", this.bankLoans);
+    
+    if (this.id != null) {
+      customer.put("id", this.id);
+    }
+    
     return customer;
+  }
+
+  public Integer getId() {
+    return id;
+  }
+
+  public void setId(Integer id) {
+    this.id = id;
   }
   
 }

@@ -7,13 +7,14 @@ import org.camunda.bpm.getstarted.httpclient.WriteService;
 public class TestMain {
 
   public static void main(String[] args) {
-    Customer customer = ReadService.getCustomerByName("Luca", "Leitzbach");
+    //Customer customer = ReadService.getCustomerByName("Luca", "Leitzbach");
     
-    Customer test = new Customer("Luca", "Leitzbach", "A", 0, 0);
+    Customer test = new Customer("Luca", "Leitzbach", "B", 100, 650);
+    test.setId(12);
     
-    WriteService.addNewCustomer(test);
+    //WriteService.addNewCustomer(test);
+    WriteService.changeCustomer(test);
     
-    System.out.println(customer);
   }
 
 }
