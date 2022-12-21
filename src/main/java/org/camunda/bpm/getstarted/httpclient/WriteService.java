@@ -54,7 +54,7 @@ public class WriteService {
   
   public static void changeCustomer(Customer customer) {
     try {
-      URL url = new URL(base);
+      URL url = new URL(base + "/" + customer.getId());
       conn = (HttpURLConnection)url.openConnection();
       
       // Request setup

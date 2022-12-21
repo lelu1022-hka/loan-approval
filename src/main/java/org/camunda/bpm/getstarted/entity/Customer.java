@@ -21,6 +21,15 @@ public class Customer {
     this.setIncome(income);
     this.setBankLoans(bankLoans);
   }
+  
+  public Customer(Integer id, String prename, String surname, String creditRating, Integer income, Integer bankLoans) {
+	    this.id = id;
+	  	this.setPrename(prename);
+	    this.setSurname(surname);
+	    this.setCreditRating(creditRating);
+	    this.setIncome(income);
+	    this.setBankLoans(bankLoans);
+	  }
 
   public String getPrename() {
     return prename;

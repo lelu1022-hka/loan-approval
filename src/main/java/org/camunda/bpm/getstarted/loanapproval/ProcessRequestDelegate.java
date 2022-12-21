@@ -18,15 +18,14 @@ public class ProcessRequestDelegate implements JavaDelegate {
     String prename = (String)execution.getVariable("prename");
     String surname = (String)execution.getVariable("surname");
     
-    // TODO Kunde nicht vorhanden, Mehrere Kunden
     Customer customer = ReadService.getCustomerByName(prename, surname);
     
-    //Setzen der Parameter im Kunden für camunda, Zinsberechnung
     if (customer != null) {
     execution.setVariable("creditrating", customer.getCreditRating());
     execution.setVariable("income", customer.getIncome());
     execution.setVariable("bankLoans", customer.getBankLoans());
     execution.setVariable("foundCustomer", true);
+    execution.setVariable("id", customer.getId());
     
     LOGGER.info("Processing request by '" + execution.getVariable("prename") + " " + execution.getVariable("surname") + 
         " Rating: " + execution.getVariable("creditrating") + 

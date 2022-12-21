@@ -9,8 +9,7 @@ public class TestMain {
   public static void main(String[] args) {
     //Customer customer = ReadService.getCustomerByName("Luca", "Leitzbach");
     
-    Customer test = new Customer("Luca", "Leitzbach", "B", 100, 650);
-    test.setId(12);
+    Customer test = new Customer(11, "Luca", "Leitzbach", "B", 100, 650);
     
     //WriteService.addNewCustomer(test);
     WriteService.changeCustomer(test);

@@ -60,8 +60,9 @@ public class ReadService {
         String rating = Util.getRating(customer);
         Integer income = Util.getIncome(customer);
         Integer bankLoans = Util.getbankLoans(customer);
+        Integer id = Util.getId(customer);
         
-        return new Customer(prename, surname, rating, income, bankLoans);
+        return new Customer(id, prename, surname, rating, income, bankLoans);
       }
       
     }

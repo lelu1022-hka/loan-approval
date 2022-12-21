@@ -43,4 +43,17 @@ public class Util {
     Integer bankLoans = album.getInt("bankLoans");
     return bankLoans;
   }
+  
+  /**
+   * Aus einem JSON Array die ID extrahieren
+   * @param responseBody
+   * @return id
+   */
+  public static Integer getId(String responseBody) {
+    //ToDo Kunden mit selben Namen
+    JSONArray customers = new JSONArray(responseBody);
+    JSONObject album = customers.getJSONObject(0);
+    Integer id = album.getInt("id");
+    return id;
+  }
 }
