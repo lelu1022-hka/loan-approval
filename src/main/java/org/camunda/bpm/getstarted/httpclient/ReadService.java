@@ -69,7 +69,7 @@ public class ReadService {
     catch (MalformedURLException e) {
       e.printStackTrace();
     } catch (IOException e) {
-      e.printStackTrace();
+      return Customer.buildErrorCustomer();
     } finally {
       conn.disconnect();
     }

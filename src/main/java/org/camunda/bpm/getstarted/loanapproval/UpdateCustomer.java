@@ -1,11 +1,15 @@
 package org.camunda.bpm.getstarted.loanapproval;
 
+import java.util.logging.Logger;
+
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 import org.camunda.bpm.getstarted.entity.Customer;
 import org.camunda.bpm.getstarted.httpclient.WriteService;
 
 public class UpdateCustomer implements JavaDelegate{
+  
+  private final static Logger LOGGER = Logger.getLogger("UpdateCustomer");
 
 	public void execute(DelegateExecution execution) throws Exception {
 		
@@ -24,6 +28,11 @@ public class UpdateCustomer implements JavaDelegate{
 	    
 	    Customer customer = new Customer(id, prename, surname, creditrating, income, newBankLoans);
 	    
-	    WriteService.changeCustomer(customer);
+	    Customer errorCustomer = WriteService.changeCustomer(customer);
+	    if (errorCustomer != null) {
+	      execution.setVariable("dbTimeOut", true);
+	      LOGGER.info("DB timedout");
+	      return;
+	    }
 	}
 }

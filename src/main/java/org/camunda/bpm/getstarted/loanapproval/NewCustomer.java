@@ -25,7 +25,13 @@ public class NewCustomer implements JavaDelegate {
     
     Customer customer = new Customer(prename, surname, creditrating, income, bankLoans);
     
-    WriteService.addNewCustomer(customer);
+    //TODO ErrorHandling
+    Customer errorCustomer = WriteService.addNewCustomer(customer);
+    if (errorCustomer != null) {
+      execution.setVariable("dbTimeOut", true);
+      LOGGER.info("DB timedout");
+      return;
+    }
     
     LOGGER.info("Customer added:" + customer.toString());
   }

@@ -103,4 +103,15 @@ public class Customer {
     this.id = id;
   }
   
+  //Fehlerbehandlung für den Server
+  //TODO Better ErrorHandling
+  public static Customer buildErrorCustomer() {
+    Customer errorCustomer = new Customer();
+    return errorCustomer;
+  }
+  
+  private Customer() {
+    this.id = -1;
+  }
+  
 }

@@ -18,7 +18,7 @@ public class WriteService {
    * Ein neuer Kunde wird der JSON-Datenbank hinzugefügt
    * @param customer Ein Kundenobjekt
    */
-  public static void addNewCustomer(Customer customer) {
+  public static Customer addNewCustomer(Customer customer) {
    
     try {
       URL url = new URL(base);
@@ -46,13 +46,14 @@ public class WriteService {
     catch (MalformedURLException e) {
       e.printStackTrace();
     } catch (IOException e) {
-      e.printStackTrace();
+      return Customer.buildErrorCustomer();
     } finally {
       conn.disconnect();
     }
+    return null;
   }
   
-  public static void changeCustomer(Customer customer) {
+  public static Customer changeCustomer(Customer customer) {
     try {
       URL url = new URL(base + "/" + customer.getId());
       conn = (HttpURLConnection)url.openConnection();
@@ -79,9 +80,10 @@ public class WriteService {
     catch (MalformedURLException e) {
       e.printStackTrace();
     } catch (IOException e) {
-      e.printStackTrace();
+      return Customer.buildErrorCustomer();
     } finally {
       conn.disconnect();
     }
+    return null;
   }
 }
