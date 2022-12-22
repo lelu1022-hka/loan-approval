@@ -15,7 +15,7 @@ public class ContractInformation implements JavaDelegate{
   
   public void execute(DelegateExecution execution) throws Exception {
     
-    if((boolean)execution.getVariable("approved")) {
+    if((boolean)execution.getVariable("approved") || (boolean)execution.getVariable("approvedManual")) {
     //Email
       LOGGER.info("Dear Customer " + execution.getVariable("surname") + ". Your credit in the amount of " + execution.getVariable("amount") + " was approved"
           + " Your interest rate: " + execution.getVariable("interest"));

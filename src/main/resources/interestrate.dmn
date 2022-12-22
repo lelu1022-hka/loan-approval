@@ -12,7 +12,7 @@
           <text></text>
         </inputExpression>
       </input>
-      <output id="Output_1" label="Interest" name="interest" typeRef="double" biodi:width="276" />
+      <output id="Output_1" label="Interest" name="interest" typeRef="integer" biodi:width="276" />
       <rule id="DecisionRule_1s2u0n3">
         <inputEntry id="UnaryTests_12zeaz1">
           <text>"A"</text>
@@ -21,7 +21,7 @@
           <text>&lt; 10000</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_077rbe5">
-          <text>0.04</text>
+          <text>1</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0y0mxsu">
@@ -32,7 +32,7 @@
           <text>&gt;=10000</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_165v2cu">
-          <text>0.05</text>
+          <text>2</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0s9ci2d">
@@ -43,7 +43,7 @@
           <text>&lt;8000</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1t8bd26">
-          <text>0.04</text>
+          <text>2</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0mtqccg">
@@ -54,7 +54,7 @@
           <text>[8000..15000]</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_11ntgia">
-          <text>0.05</text>
+          <text>3</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_00ygh12">
@@ -65,7 +65,7 @@
           <text>&gt;15000</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1xi3k84">
-          <text>0.06</text>
+          <text>4</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_17698c2">
@@ -76,7 +76,7 @@
           <text>&lt;5000</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0z72led">
-          <text>0.04</text>
+          <text>4</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_10s8e2h">
@@ -87,7 +87,7 @@
           <text>&gt;=5000</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1xk6abq">
-          <text>0.06</text>
+          <text>5</text>
         </outputEntry>
       </rule>
     </decisionTable>

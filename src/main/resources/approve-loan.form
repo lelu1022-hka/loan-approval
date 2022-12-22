@@ -18,7 +18,11 @@
       "label": "Amount",
       "type": "number",
       "id": "Field_0p86nsn",
-      "key": "amount"
+      "key": "amount",
+      "validate": {
+        "required": false
+      },
+      "disabled": true
     },
     {
       "label": "Credit Rating",
